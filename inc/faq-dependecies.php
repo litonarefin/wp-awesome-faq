@@ -16,9 +16,15 @@ function jltmaf_elementor_dependency(){
 // Gutenberg Dependency
 if ( version_compare( $wp_version, '5.0', '>=' ) ) {
 	if (is_admin()) {
+
+		// Gutenberg is not active.
+		if ( ! function_exists( 'register_block_type' ) ) { return; }		
+
 		add_filter( 'block_categories', 'jltmaf_gutenberg_block_category', 10, 2 );
+		
+		include( MAF_DIR . '/inc/faq-guternberg.php');
 	}
-	include( MAF_DIR . '/inc/faq-guternberg.php');
+	
 }
 
 function jltmaf_gutenberg_block_category( $categories, $post ) {
@@ -32,3 +38,4 @@ function jltmaf_gutenberg_block_category( $categories, $post ) {
 		)
 	);
 }
+

@@ -5,12 +5,21 @@ add_action( 'init', 'jltmaf_register_master_accordion_block' );
 if ( ! function_exists( 'jltmaf_register_master_accordion_block' ) ) {
 	function jltmaf_register_master_accordion_block(){
 
-		// Check if the register function exists
+		// Gutenberg is not active.
 		if ( ! function_exists( 'register_block_type' ) ) {
 			return;
 		}
 
-		register_block_type('master-accordion/accordion', array(
+		wp_register_script(
+			'jltmaf-block',
+			plugins_url( 'block.js', __FILE__ ),
+			array( 'wp-blocks', 'wp-i18n', 'wp-element' ),
+			// filemtime( plugin_dir_path( __FILE__ ) . 'block.js' )
+			MAF_DIR . '/inc/gutenberg/block.js'
+		);
+
+		register_block_type('master-accordion/faq', array(
+				//'editor_script' => 'jltmaf-block',
 				'render_callback' => 'jltmaf_guten_render_callback',
 				'attributes' => array(
 					'numCols' => array(
@@ -44,7 +53,10 @@ if ( ! function_exists( 'jltmaf_register_master_accordion_block' ) ) {
 				)
 			)
 		);
-		
+
+	  	if ( function_exists( 'wp_set_script_translations' ) ) {
+	    	wp_set_script_translations( 'jltmaf-block', 'jltmaf' );
+	  	}
 
 	}
 }
