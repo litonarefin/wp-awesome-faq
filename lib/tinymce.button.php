@@ -23,7 +23,8 @@ add_action('init', 'jltmf_tinymce_js');
 
 
 function add_js_plugin( $plugin_array ) {
-    $plugin_array['jw_buttons'] = plugins_url('/jw-colorful-faq-pro/lib/jw.tinymce.js');
+     
+    $plugin_array['jw_buttons'] = MAF_URL . '/lib/jw.tinymce.js';
     return $plugin_array;
 }
 

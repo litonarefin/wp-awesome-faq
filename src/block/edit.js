@@ -12,6 +12,8 @@ const { __ } = wp.i18n;
 
 const { decodeEntities } = wp.htmlEntities;
 
+const { apiFetch } = wp;
+
 const {
 	registerStore,
 	withSelect,
@@ -27,7 +29,8 @@ const {
 	TextControl,
 	ToggleControl,
 	Toolbar,
-	withAPIData
+	withAPIData,
+	ServerSideRender
 } = wp.components;
 
 const {
@@ -37,7 +40,6 @@ const {
 
 const {
 	BlockAlignmentToolbar,
-	ServerSideRender
 } = wp.blockEditor;
 
 const MAX_POSTS_COLUMNS = 4;
@@ -57,6 +59,8 @@ class MasterAccordion extends Component {
 				faqTags, 
 				postsToShow
 			} = attributes;
+		
+		console.log(this.props.faqCatList);
 
 		const inspectorControls = (
 			<InspectorControls>
@@ -97,7 +101,6 @@ class MasterAccordion extends Component {
 					block = "jltmaf/master-accordion"
 					attributes = { attributes }
 				/>
-				
 			</Fragment>
 		);
 	}

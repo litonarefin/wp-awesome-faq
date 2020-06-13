@@ -1,8 +1,5 @@
 <?php 
 
-
-
-
 /*--------------------------------------------------------------
  *				Add Sub-Menu Admin Style
  *-------------------------------------------------------------*/
@@ -39,7 +36,11 @@ function jeweltheme_faq_posts_sort_callback(){
 
 	$faq = new WP_Query('post_type=faq&posts_per_page=-1&orderby=menu_order&order=ASC');
 ?>
-	<div class="wrap">
+	<div class="wrap <?php if ( !jltmaf_accordion()->can_use_premium_code() ) { echo 'jltmaf-disabled'; }?>">
+		<?php if ( !jltmaf_accordion()->can_use_premium_code() ) { ?>
+			<span class="jltmaf-pro-badge eicon-pro-icon"></span>
+		<?php } ?>
+
 		<h3>Sort FAQ<img src="<?php echo home_url(); ?>/wp-admin/images/loading.gif" id="loading-animation" /></h3>
 		<ul id="slide-list">
 			<?php if($faq->have_posts()): ?>
@@ -52,6 +53,9 @@ function jeweltheme_faq_posts_sort_callback(){
 		</ul>
 	</div>
 <?php
+	if ( !jltmaf_accordion()->can_use_premium_code() ) {
+		echo '<span class="jltmaf-pro-feature"> Upgrade to  <a href="' . jltmaf_accordion()->get_upgrade_url() . '">Pro Version</a> unlock this feature.</span>';
+	}
 }
 
 

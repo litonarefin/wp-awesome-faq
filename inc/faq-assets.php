@@ -18,6 +18,13 @@ function jltmaf_load_admin_scripts() {
 
 	wp_enqueue_script( 'fonticonpicker', MAF_URL . '/assets/fonticonpicker/js/jquery.fonticonpicker.min.js', array( 'jquery'), MAF_VERSION, true );	
 	wp_enqueue_script( 'master-accordion-admin', MAF_URL . '/assets/js/proscript.js', array('jquery', 'wp-color-picker'), MAF_VERSION, true );
+
+	$jltmaf_upgrade_pro = '<div class="jltmaf-text-small" style="padding-top:20px;"> Upgrade to  <a href="' . jltmaf_accordion()->get_upgrade_url() . '">Pro Version</a> unlock this feature.</div>';
+	$admin_localize_data = array(
+		'upgrade_pro'   => $jltmaf_upgrade_pro
+	);
+	wp_localize_script( 'master-accordion-admin', 'jltmaf_admin_scripts', $admin_localize_data );
+
 }
 
 
@@ -52,6 +59,49 @@ function jltmaf_dashboard_icon(){ ?>
 	<style>
 		/*FAQs Dashboard Icons*/
 		#adminmenu .menu-icon-faq div.wp-menu-image:before { content: "\f348"; }
+
+		.jltmaf-pro-badge{
+		  	position: absolute;
+		  	z-index: 333;
+		  	text-align: center;
+		  	padding-left: 23%;
+		  	font-size: 70px !important;
+		  	padding-top: 10%;
+		}
+		.jltmaf-pro-badge:before{
+			content: 'Pro';
+			font-size: 90px;
+			color: #fff;
+			background: #000;
+			padding: 20px;
+			border-radius: 30px; 
+			opacity: .6;
+		}
+		.top-badge{
+		  	padding-left: 20%;
+		  	padding-top: 0;
+		}
+		.jltmaf-disabled{
+		  	pointer-events: none;
+		  	opacity: 0.4;
+		}
+		.jltmaf-pro-feature{
+			position: absolute;
+			z-index: 555;
+			text-align: center;
+			font-size: 30px;
+			opacity: 1;
+			padding-left: 3%;
+			font-size: 70px !important;
+			padding-top: 10%;
+		}
+		.jltmaf-text-small{
+			position: relative !important;
+			font-size: 12px !important;
+			font-style: italic !important;
+			color: #000 !important;
+			opacity: .8 !important;
+		}
 	</style>
 	<?php
 }

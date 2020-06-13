@@ -1,5 +1,37 @@
 <?php
 
+add_filter( 'the_content', 'do_shortcode' );
+
+
+add_action( 'admin_init', 'jltmaf_safe_welcome_redirect');
+
+function jltmaf_safe_welcome_redirect() {
+
+    // Bail if no activation redirect transient is present.
+    if ( ! get_transient( '_jltmaf_welcome_redirect' ) ) {
+        return;
+    }
+
+    // Delete the redirect transient.
+    delete_transient( '_jltmaf_welcome_redirect' );
+
+    // Bail if activating from network or bulk sites.
+    if ( is_network_admin() || isset( $_GET['activate-multi'] ) ) {
+        return;
+    }
+
+    // Redirect to Welcome Page.
+    wp_redirect( 
+          esc_url( admin_url( 'edit.php?post_type=faq&page=jltmaf_faq_settings' ) ) 
+    );
+
+    die();
+
+}
+
+
+
+
 // Render Options data from admin settings
 
 function jltmaf_options( $option, $section, $default = '' ) {

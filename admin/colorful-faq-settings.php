@@ -11,7 +11,7 @@ if ( !class_exists('JT_Colorful_FAQ_Settings_API' ) ){
             $this->settings_api = new JT_Colorful_FAQ_Settings_API_Class;
 
             add_action( 'admin_init', array($this, 'jltmaf_admin_init') );
-            add_action( 'admin_menu', array($this, 'admin_menu') );
+            add_action( 'admin_menu', array($this, 'jltmaf_admin_menu') );
             add_action( 'admin_enqueue_scripts', array( $this, 'jltmaf_admin_enqueue_scripts' ) );
         }
 
@@ -29,12 +29,12 @@ if ( !class_exists('JT_Colorful_FAQ_Settings_API' ) ){
             $this->settings_api->admin_init();
         }
 
-        function admin_menu() {
+        function jltmaf_admin_menu() {
             add_submenu_page('edit.php?post_type=faq', 
                 __('FAQ Admin Settings', MAF_TD ),
                 __('Settings', MAF_TD ),
                 'edit_posts', 
-                'colorful_faq_settings', 
+                'jltmaf_faq_settings', 
                 array($this, 'plugin_page') 
             );
         }
@@ -316,7 +316,7 @@ if ( !class_exists('JT_Colorful_FAQ_Settings_API' ) ){
                    </tbody>
 
                    <p style="text-align: right;">
-                      <a class="button button-primary button-large" href="https://jeweltheme.com/shop/wordpress-faq-plugin/?utm_source=plugin_admin&utm_medium=button&utm_campaign=dashboard"><?php esc_html_e('View Master Accordion Pro', MAF_TD); ?>
+                      <a class="button button-primary button-large" href="https://jeweltheme.com/shop/wordpress-faq-plugin/?utm_source=plugin_admin&utm_medium=button&utm_campaign=dashboard" target="_blank"><?php esc_html_e('View Master Accordion Pro', MAF_TD); ?>
                       </a>
                    </p>
 

@@ -183,7 +183,11 @@ function jltmaf_wp_awesome_faq_accordion_scripts() { ?>
 		jQuery(document).ready(function($){
 			<?php $faq_layout = jltmaf_options('faq_collapse_style', 'jltmaf_settings', 'close_all' );
 				if( $faq_layout == "first_open"){ ?>
-			    	jQuery(".accordion").accordion({heightStyle: "content", collapsible: true, active: 0});
+			    	<!-- jQuery(".accordion").accordion({heightStyle: "content", collapsible: true, active: 0}); -->
+			    	<!-- $("#accordion a:first").trigger("click"); -->
+					$('.panel.panel-default').on('show.bs.collapse', function () {
+					    if (active) $('panel.panel-default .in').collapse('hide');
+					});			    	
 			<?php } if( $faq_layout == "close_all"){ ?>
 			    jQuery(".accordion").accordion({heightStyle: "content", collapsible: true, active: false});
 			<?php } if( $faq_layout == "open_all"){ ?>
@@ -197,4 +201,4 @@ function jltmaf_wp_awesome_faq_accordion_scripts() { ?>
 	</script>
 <?php
 }
-add_action( 'wp_footer', 'jltmaf_wp_awesome_faq_accordion_scripts', 9999 );
+// add_action( 'wp_footer', 'jltmaf_wp_awesome_faq_accordion_scripts', 9999 );

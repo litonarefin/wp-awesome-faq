@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @uses {wp-editor} for WP editor styles.
  * @since 1.0.0
  */
-function master_accordion_cgb_block_assets() { // phpcs:ignore
+function jltmaf_gutenberg_block_assets() { // phpcs:ignore
 	// Register block styles for both frontend + backend.
 	wp_register_style(
 		'master_accordion-cgb-style-css', // Handle.
@@ -121,7 +121,7 @@ function master_accordion_cgb_block_assets() { // phpcs:ignore
 }
 
 // Hook: Block assets.
-add_action( 'init', 'master_accordion_cgb_block_assets' );
+add_action( 'init', 'jltmaf_gutenberg_block_assets' );
 
 
 
@@ -158,9 +158,9 @@ function jltmaf_guten_render_callbacks( $attributes, $content ){
 
 	if ( $recent_posts ) {
 		foreach ( $recent_posts as $post ) {
+			setup_postdata( $post );
 			$post_id = $post->ID;
-
-
+			
 			$list_items_markup .= sprintf(
 				'<div class="%1$s"><div class="%2$s"><h3 class="%3$s">
 				<a data-toggle="collapse" class="collapsed" data-parent="#%4$s" href="#%5$s-%6$s">

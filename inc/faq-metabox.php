@@ -27,13 +27,12 @@ function jltmaf_customizer_callback( $post ) {
 
 	<div class="jltmaf-container">
 
-
 		<h5 class="faq-customizer-title">
 			<?php _e( 'Close Icon', MAF_TD )?>		
 		</h5>
 		
-		<p>
-			<select id="jltmaf_mb_close_icon" name="close_icon" class="jltmaf-fonticon-pickers">
+		<p class="<?php if ( !jltmaf_accordion()->can_use_premium_code() ) { echo 'jltmaf-disabled'; }?>">
+			<select id="jltmaf_mb_close_icon" name="close_icon" class="jltmaf-fonticon-pickers ">
 				<option value=""><?php echo __('No icon', MAF_TD);?></option>
 				<?php 
 					$font_awesome_icons = jltmaf_fa_icons();
@@ -42,14 +41,18 @@ function jltmaf_customizer_callback( $post ) {
 			        }
 				?>
 			</select>
+			<?php 	if ( !jltmaf_accordion()->can_use_premium_code() ) {
+			echo '<div class="jltmaf-text-small"> Upgrade to  <a href="' . jltmaf_accordion()->get_upgrade_url() . '">Pro Version</a> unlock this feature.</div>';
+			} ?>
 		</p>
+		
 
 
 		<h5 class="faq-customizer-title">
 			<?php _e( 'Open Icon', MAF_TD )?>		
 		</h5>
 		
-		<p>
+		<p class="<?php if ( !jltmaf_accordion()->can_use_premium_code() ) { echo 'jltmaf-disabled'; }?>">
 			<select id="jltmaf_mb_open_icon" name="open_icon" class="jltmaf-fonticon-pickers">
 				<option value=""><?php echo __('No icon', MAF_TD);?></option>
 				<?php 
@@ -60,6 +63,9 @@ function jltmaf_customizer_callback( $post ) {
 			        }
 				?>
 			</select>
+			<?php 	if ( !jltmaf_accordion()->can_use_premium_code() ) {
+			echo '<div class="jltmaf-text-small"> Upgrade to  <a href="' . jltmaf_accordion()->get_upgrade_url() . '">Pro Version</a> unlock this feature.</div>';
+			} ?>
 		</p>
 
 
@@ -69,11 +75,14 @@ function jltmaf_customizer_callback( $post ) {
 			</h5>
 		</div>
 
-		<div class="right-half">
+		<div class="right-half <?php if ( !jltmaf_accordion()->can_use_premium_code() ) { echo 'jltmaf-disabled'; }?>">
 			<p>
 				<input name="faq-title-bg-color" type="text" value="<?php if ( isset ( $ccr_store_data['faq-title-bg-color'] ) ) echo $ccr_store_data['faq-title-bg-color'][0]; ?>" class="faq-color-picker" />
 			</p>
 		</div>
+		<?php 	if ( !jltmaf_accordion()->can_use_premium_code() ) {
+		echo '<div class="jltmaf-text-small"> Upgrade to  <a href="' . jltmaf_accordion()->get_upgrade_url() . '">Pro Version</a> unlock this feature.</div>';
+		} ?>		
 
 
 		<div class="left-half">
@@ -81,11 +90,14 @@ function jltmaf_customizer_callback( $post ) {
 				<?php _e( 'Title Color', MAF_TD )?>
 			</h5>
 		</div>
-		<div class="right-half">
+		<div class="right-half <?php if ( !jltmaf_accordion()->can_use_premium_code() ) { echo 'jltmaf-disabled'; }?>">
 			<p>
 				<input name="faq-title-text-color" type="text" value="<?php if ( isset ( $ccr_store_data['faq-title-text-color'] ) ) echo $ccr_store_data['faq-title-text-color'][0]; ?>" class="faq-color-picker" />
 			</p>
 		</div>
+		<?php if ( !jltmaf_accordion()->can_use_premium_code() ) {
+		echo '<div class="jltmaf-text-small"> Upgrade to  <a href="' . jltmaf_accordion()->get_upgrade_url() . '">Pro Version</a> unlock this feature.</div>';
+		} ?>
 
 
 		<div class="left-half">
@@ -93,27 +105,37 @@ function jltmaf_customizer_callback( $post ) {
 				<?php _e( 'Content Background Color', MAF_TD )?>
 			</h5>
 		</div>
-		<div class="right-half">		
+		<div class="right-half <?php if ( !jltmaf_accordion()->can_use_premium_code() ) { echo 'jltmaf-disabled'; }?>">		
 			<p>
 				<input name="faq-bg-color" type="text" value="<?php if ( isset ( $ccr_store_data['faq-bg-color'] ) ) echo $ccr_store_data['faq-bg-color'][0]; ?>" class="faq-color-picker" />
 			</p>
 		</div>
+		<?php if ( !jltmaf_accordion()->can_use_premium_code() ) {
+		echo '<div class="jltmaf-text-small"> Upgrade to  <a href="' . jltmaf_accordion()->get_upgrade_url() . '">Pro Version</a> unlock this feature.</div>';
+		} ?>
+
 
 		<h5 class="faq-customizer-title">
 			<?php _e( 'Content Text Color', MAF_TD )?>		
 		</h5>
 		
-		<p>
+		<p class="<?php if ( !jltmaf_accordion()->can_use_premium_code() ) { echo 'jltmaf-disabled'; }?>">
 			<input name="faq-text-color" type="text" value="<?php if ( isset ( $ccr_store_data['faq-text-color'] ) ) echo $ccr_store_data['faq-text-color'][0]; ?>" class="faq-color-picker" />
 		</p>
+		<?php if ( !jltmaf_accordion()->can_use_premium_code() ) {
+		echo '<div class="jltmaf-text-small"> Upgrade to  <a href="' . jltmaf_accordion()->get_upgrade_url() . '">Pro Version</a> unlock this feature.</div>';
+		} ?>		
 
 		<h5 class="faq-customizer-title">
 			<?php _e( 'Content Border Color', MAF_TD )?>		
 		</h5>
 		
-		<p>
+		<p class="<?php if ( !jltmaf_accordion()->can_use_premium_code() ) { echo 'jltmaf-disabled'; }?>">
 			<input name="faq-border-color" type="text" value="<?php if ( isset ( $ccr_store_data['faq-border-color'] ) ) echo $ccr_store_data['faq-border-color'][0]; ?>" class="faq-color-picker" />
 		</p>
+		<?php if ( !jltmaf_accordion()->can_use_premium_code() ) {
+		echo '<div class="jltmaf-text-small"> Upgrade to  <a href="' . jltmaf_accordion()->get_upgrade_url() . '">Pro Version</a> unlock this feature.</div>';
+		} ?>		
 
 	</div>
 
