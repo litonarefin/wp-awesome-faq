@@ -219,29 +219,39 @@ if ( !class_exists('JT_Colorful_FAQ_Settings_API' ) ){
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
-                         <td><?php esc_html_e( 'Access to all Google Fonts', MAF_TD ); ?></td>
+                         <td><?php esc_html_e( 'Classic Editor Support', MAF_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
-                         <td><?php esc_html_e( 'Priority support', MAF_TD ); ?></td>
-                         <td class="redFeature"><span class="dashicons dashicons-no-alt dash-red"></span></td>
+                         <td><?php esc_html_e( 'Gutenberg Support', MAF_TD ); ?></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                      </tr>
+                      <tr>
+                         <td><?php esc_html_e( 'Shortcode Generator - Classic Editor', MAF_TD ); ?></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                      </tr>
+                      <tr>
+                         <td><?php esc_html_e( 'Gutenberg Block ( Master FAQ Accordion)', MAF_TD ); ?></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
 
-                    <tr>
-                         <td><?php esc_html_e( 'Parallax backgrounds', MAF_TD ); ?></td>
+                      <tr>
+                         <td><?php esc_html_e( 'Custom Elementor blocks(Master Accordion Addon)', MAF_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
-                         <td><?php esc_html_e( 'Social Icons', MAF_TD ); ?></td>
+                         <td><?php esc_html_e( 'Nested FAQ', MAF_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
-                         <td><?php esc_html_e( 'Custom Elementor blocks', MAF_TD ); ?></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                         <td><?php esc_html_e( 'Drag & Drop Sorting FAQ Items', MAF_TD ); ?></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
@@ -250,69 +260,86 @@ if ( !class_exists('JT_Colorful_FAQ_Settings_API' ) ){
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
-                         <td><?php esc_html_e( 'Color options', MAF_TD ); ?></td>
+                         <td><?php esc_html_e( 'Heading Tags Selection', MAF_TD ); ?></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                      </tr>
+                      <tr>
+                         <td><?php esc_html_e( 'FAQ by Category', MAF_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
-                         <td><?php esc_html_e( 'Blog options', MAF_TD ); ?></td>
+                         <td><?php esc_html_e( 'FAQ by Tags', MAF_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
-                         <td><?php esc_html_e( 'Widgetized footer', MAF_TD ); ?></td>
+                         <td><?php esc_html_e( 'Accordion/Toogle Type', MAF_TD ); ?></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                      </tr>
+                      <tr>
+                         <td><?php esc_html_e( 'Single FAQ Template', MAF_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
-                         <td><?php esc_html_e( 'Background image support', MAF_TD ); ?></td>
+                         <td><?php esc_html_e( 'Open/Close Icon Settings', MAF_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                      </tr>
-                      <td><?php esc_html_e( 'WooCommerce compatible', MAF_TD ); ?></td>
-                      <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                      <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                      </tr>
-                      <tr>
-                         <td><?php esc_html_e( 'Growing collection of premium demos', MAF_TD ); ?></td>
-                         <td class="redFeature"><span class="dashicons dashicons-no-alt dash-red"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
-                         <td><?php esc_html_e( 'Footer Credits option', MAF_TD ); ?></td>
-                         <td class="redFeature"><span class="dashicons dashicons-no-alt dash-red"></span></td>
+                         <td><?php esc_html_e( 'Individual Open/Close Icon Settings', MAF_TD ); ?></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
-                         <td><?php esc_html_e( 'Footer background image', MAF_TD ); ?></td>
-                         <td class="redFeature"><span class="dashicons dashicons-no-alt dash-red"></span></td>
+                         <td><?php esc_html_e( 'Icon Alignment(Left/Right) Settings', MAF_TD ); ?></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
-                         <td><?php esc_html_e( 'Extra Elementor blocks (portfolio, shop categories, slider)', MAF_TD ); ?></td>
-                         <td class="redFeature"><span class="dashicons dashicons-no-alt dash-red"></span></td>
+                         <td><?php esc_html_e( 'Collapse/Open Style(1st Open, Close All, Open All) Settings', MAF_TD ); ?></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
-                         <td><?php esc_html_e( 'Two extra menu types', MAF_TD ); ?></td>
-                         <td class="redFeature"><span class="dashicons dashicons-no-alt dash-red"></span></td>
+                         <td><?php esc_html_e( 'Title Heading Selection Settings', MAF_TD ); ?></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
-                         <td><?php esc_html_e( 'Extra blog layouts (list, masonry)', MAF_TD ); ?></td>
-                         <td class="redFeature"><span class="dashicons dashicons-no-alt dash-red"></span></td>
+                         <td><?php esc_html_e( 'Title Color Settings', MAF_TD ); ?></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
-                         <td><?php esc_html_e( 'Extended WooCommerce options', MAF_TD ); ?></td>
-                         <td class="redFeature"><span class="dashicons dashicons-no-alt dash-red"></span></td>
+                         <td><?php esc_html_e( 'Individual Title Color Settings', MAF_TD ); ?></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                       </tr>
                       <tr>
-                         <td><?php esc_html_e( 'Priority support', MAF_TD ); ?></td>
-                         <td class="redFeature"><span class="dashicons dashicons-no-alt dash-red"></span></td>
+                         <td><?php esc_html_e( 'Title Background Settings', MAF_TD ); ?></td>
                          <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
-                      </tr>                      
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                      </tr>
+                      <tr>
+                         <td><?php esc_html_e( 'Individual Title Background Settings', MAF_TD ); ?></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                      </tr>
+                      <tr>
+                         <td><?php esc_html_e( 'Content Background Settings', MAF_TD ); ?></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                      </tr>
+                      <tr>
+                         <td><?php esc_html_e( 'Individual Content Background Settings', MAF_TD ); ?></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-red"></span></td>
+                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                      </tr>
+
                    </tbody>
 
                    <p style="text-align: right;">
