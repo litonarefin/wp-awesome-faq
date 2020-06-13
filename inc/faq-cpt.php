@@ -39,6 +39,7 @@ function jltmaf_register_faq_post_type() {
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
 		'capability_type'     => 'post',
+		'show_in_rest' 	      => true
 
 	);
 	register_post_type( 'faq', $args );
@@ -52,6 +53,7 @@ function jltmaf_register_faq_post_type() {
 		'show_admin_column'          => true,
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => true,
+		'show_in_rest' 	      		 => true,
 	) );
 
 	// Register Tags Taxonomy FAQs
@@ -63,6 +65,7 @@ function jltmaf_register_faq_post_type() {
 		'show_admin_column'          => true,
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => true,
+		'show_in_rest' 	      		 => true,
 	) );
 }
 

@@ -100,7 +100,6 @@ function jltmaf_awesome_faq_shortcode( $atts , $content = null ) {
 
 	ob_start();
 
-
 	extract( shortcode_atts(
 		array(
 			'items' => $posts_per_page,

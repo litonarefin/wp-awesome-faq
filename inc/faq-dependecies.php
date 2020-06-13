@@ -22,7 +22,8 @@ if ( version_compare( $wp_version, '5.0', '>=' ) ) {
 
 		add_filter( 'block_categories', 'jltmaf_gutenberg_block_category', 10, 2 );
 		
-		include( MAF_DIR . '/inc/faq-guternberg.php');
+		// include( MAF_DIR . '/inc/faq-guternberg.php');
+		include( MAF_DIR . '/src/init.php');
 	}
 	
 }
