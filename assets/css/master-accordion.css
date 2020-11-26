@@ -269,7 +269,7 @@
   cursor: pointer;
 }
 #jltmaf-awesome-faq .panel-title a {
-  text-decoration: none;
+  text-decoration: none !important;
   cursor: pointer;
 }
 #jltmaf-awesome-faq .panel-title a:hover {

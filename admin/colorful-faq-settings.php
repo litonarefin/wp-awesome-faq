@@ -374,6 +374,10 @@ if ( !class_exists('JT_Colorful_FAQ_Settings_API' ) ){
                 </h1>
                 <p class="welcome-desc">
                     <?php _e( 'Master Accordion is now installed and ready to go. To help you with the next step, we’ve gathered together on this page all the resources you might need. We hope you enjoy using Master Accordion. You can always come back to this page by going to <strong>FAQs > Settings</strong>.', MAF_TD ); ?>
+
+                    [faq items="-1" cat="Category Name" tag="Tag name" orderby"title" order="ASC"]
+
+                    
                 </p>
 
 

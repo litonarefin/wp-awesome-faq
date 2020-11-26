@@ -3,7 +3,7 @@
  * Plugin Name: Master FAQ Accordion ( Former WP Awesome FAQ Plugin )
  * Plugin URI: https://jeweltheme.com/shop/wordpress-faq-plugin/
  * Description: Best Accordion Plugin. Create your FAQ (Frequently Asked Question) items on a Colorful way. A nice creation by <a href="http://www.jeweltheme.com/">Jewel Theme</a>.
- * Version: 4.1.4
+ * Version: 4.1.6
  * Author: Jewel Theme
  * Author URI: https://jeweltheme.com
  * Text Domain: maf

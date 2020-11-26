@@ -85,7 +85,7 @@ function jltmaf_heading_icon(){
  // Accordion Heading Tabs
 function jltmaf_heading_tags(){
 	if( jltmaf_options('faq_heading_tags', 'jltmaf_settings' ) !="" ){
-		echo esc_attr( jltmaf_options('faq_heading_tags', 'jltmaf_settings' ));	
+		echo esc_attr( jltmaf_options('faq_heading_tags', 'jltmaf_settings', 'div' ));	
 	}
 }
 
@@ -96,7 +96,7 @@ function jltmaf_heading_tags(){
 
 function jltmaf_awesome_faq_shortcode( $atts , $content = null ) {
 
-	$posts_per_page = jltmaf_options('posts_per_page', 'jltmaf_content' );
+	$posts_per_page = jltmaf_options('posts_per_page', 'jltmaf_content', '-1' );
 
 	ob_start();
 
@@ -124,7 +124,7 @@ function jltmaf_awesome_faq_shortcode( $atts , $content = null ) {
 
 	//First Post Active
 	$count = 0; 
-	$accordion = 'accordion-' . time() . rand();
+	$accordion = 'accordion-' . time() . rand(10,100);
 
 	$jltmaf_id = $accordion .  $count;
 
@@ -139,14 +139,14 @@ function jltmaf_awesome_faq_shortcode( $atts , $content = null ) {
 
 			<div class="panel panel-default">
 				<div class="jltmaf-item panel-heading" style="background:<?php jw_faq_title_bg_color(); ?>;">
-					<<?php jltmaf_heading_tags();?> class="panel-title">
+					<div class="panel-title">
 						<a data-toggle="collapse" class="collapsed" data-parent="#<?php echo esc_attr( $jltmaf_id );?>" href="#<?php echo $accordion;?>-<?php the_ID(); ?>" style="color:<?php jw_faq_title_text_color(); ?>;">
 								<span class="pull-<?php jltmaf_heading_icon_position();?> jltmaf-icon">
 									<?php jltmaf_heading_icon();?>
 								</span>
 							<?php the_title() ?>
 						</a>
-					</<?php jltmaf_heading_tags();?>>
+					</div>
 				</div>
 
 				<div id="<?php echo $accordion;?>-<?php the_ID(); ?>" class="panel-collapse collapse" style="background:<?php jw_faq_bg_color(); ?>; color:<?php jw_faq_text_color(); ?>; border-color:<?php jw_faq_border_color(); ?>;">

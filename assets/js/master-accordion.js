@@ -51,8 +51,8 @@ var JLTMAF = {
 
 
 
-$(document).ready(function () {
-
+$(document).ready(function (e) {
+	e.preventDefault();
 	JLTMAF.accordion();
 
 });

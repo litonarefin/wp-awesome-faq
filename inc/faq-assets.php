@@ -19,9 +19,12 @@ function jltmaf_load_admin_scripts() {
 	wp_enqueue_script( 'fonticonpicker', MAF_URL . '/assets/fonticonpicker/js/jquery.fonticonpicker.min.js', array( 'jquery'), MAF_VERSION, true );	
 	wp_enqueue_script( 'master-accordion-admin', MAF_URL . '/assets/js/proscript.js', array('jquery', 'wp-color-picker'), MAF_VERSION, true );
 
+	
 	$jltmaf_upgrade_pro = '<div class="jltmaf-text-small" style="padding-top:20px;"> Upgrade to  <a href="' . jltmaf_accordion()->get_upgrade_url() . '">Pro Version</a> unlock this feature.</div>';
+
 	$admin_localize_data = array(
-		'upgrade_pro'   => $jltmaf_upgrade_pro
+		'upgrade_pro'   => $jltmaf_upgrade_pro,
+		'is_pro'		=> (jltmaf_accordion()->can_use_premium_code()) ? true : false
 	);
 	wp_localize_script( 'master-accordion-admin', 'jltmaf_admin_scripts', $admin_localize_data );
 

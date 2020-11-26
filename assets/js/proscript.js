@@ -1,12 +1,16 @@
 jQuery(document).ready(function($){
+    var is_pro = jltmaf_admin_scripts.is_pro;
+    console.log('ispross',is_pro);
     $('.faq-color-picker').wpColorPicker();
     jQuery(".jltmaf-fonticon-picker, #jltmaf_mb_open_icon, #jltmaf_mb_close_icon").fontIconPicker();
 
-    jQuery('.faq_collapse_style td').addClass('jltmaf-disabled');
-    jQuery('.faq_collapse_style').append( jltmaf_admin_scripts.upgrade_pro );
-    
-    jQuery('.faq_heading_tags td').addClass('jltmaf-disabled');
-    jQuery('.faq_heading_tags').append( jltmaf_admin_scripts.upgrade_pro );
+    if(!is_pro){
+        jQuery('.faq_collapse_style td').addClass('jltmaf-disabled');
+        jQuery('.faq_collapse_style').append( jltmaf_admin_scripts.upgrade_pro );           
+
+        jQuery('.faq_heading_tags td').addClass('jltmaf-disabled');
+        jQuery('.faq_heading_tags').append( jltmaf_admin_scripts.upgrade_pro );
+    }
 
 });
 
