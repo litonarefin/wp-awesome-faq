@@ -1,0 +1,23 @@
+{
+    "name": "litonarefin/wp-awesome-faq",
+    "autoload": {
+        "psr-4": {
+            "JLTWPAFAQ\\Inc\\": "Inc/",
+            "JLTWPAFAQ\\Inc\\Admin\\": "Inc/Admin",
+            "JLTWPAFAQ\\Libs\\": "Libs/",
+            "JLTWPAFAQ\\Libs\\License\\": "Libs/License/"
+        },
+        "files": [
+            "Libs/License/manager.php",
+            "Inc/functions.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Jewel Theme",
+            "email": "support@jeweltheme.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {}
+}

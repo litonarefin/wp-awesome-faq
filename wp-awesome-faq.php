@@ -1,102 +1,104 @@
 <?php
 /**
- * Plugin Name: Master FAQ Accordion ( Former WP Awesome FAQ Plugin )
- * Plugin URI: https://jeweltheme.com/shop/wordpress-faq-plugin/
- * Description: Best Accordion Plugin. Create your FAQ (Frequently Asked Question) items on a Colorful way. A nice creation by <a href="http://www.jeweltheme.com/">Jewel Theme</a>.
- * Version: 4.1.6
- * Author: Jewel Theme
- * Author URI: https://jeweltheme.com
- * Text Domain: maf
+ * Plugin Name: Master Accordion
+ * Plugin URI:  https://jeweltheme.com/
+ * Description: Awesome WordPress FAQ Plugin
+ * Version:     4.2.0
+ * Author:      Jewel Theme
+ * Author URI:  https://jeweltheme.com
+ * Text Domain: wp-awesome-faq
+ * Domain Path: languages/
+ * License:     GPLv3 or later
+ * License URI: https://www.gnu.org/licenses/gpl-3.0.html
+ *
+ * @package wp-awesome-faq
  */
 
-$plugin_data = get_file_data(__FILE__, 
-	array(
-		'Version' 		=> 'Version',
-		'Plugin Name' 	=> 'Plugin Name'
-	), 
-	false);
-$plugin_name = $plugin_data['Plugin Name'];
-$plugin_version = $plugin_data['Version'];
-
-define('MAF', $plugin_name);
-define('MAF_VERSION', $plugin_version);
-define('MAF_URL', untrailingslashit( plugin_dir_url( __FILE__ ) ));
-define('MAF_DIR', untrailingslashit( plugin_dir_path( __FILE__ ) ));
-define('MAF_TD', load_plugin_textdomain('maf'));
-define('MAF_ADDON', plugin_dir_path( __FILE__ ) . 'inc/elementor/addon/' );
-define('MAF_PRO_URL', 'https://jeweltheme.com/product/wordpress-faq-plugin/');
-
-if ( ! function_exists( 'jltmaf_accordion' ) ) {
-    // Create a helper function for easy SDK access.
-    function jltmaf_accordion() {
-        global $jltmaf_accordion;
-
-        if ( ! isset( $jltmaf_accordion ) ) {
-            // Activate multisite network integration.
-            if ( ! defined( 'WP_FS__PRODUCT_6343_MULTISITE' ) ) {
-                define( 'WP_FS__PRODUCT_6343_MULTISITE', true );
-            }
-
-            // Include Freemius SDK.
-            require_once dirname(__FILE__) . '/freemius/start.php';
-
-            $jltmaf_accordion = fs_dynamic_init( array(
-                'id'                  => '6343',
-                'slug'                => 'wp-awesome-faq',
-                'type'                => 'plugin',
-                'public_key'          => 'pk_a54451ba3b9416a4e0215b62f962a',
-                'is_premium'          => true,
-                // If your plugin is a serviceware, set this option to false.
-                'has_premium_version' => true,
-                'has_addons'          => false,
-                'has_paid_plans'      => true,
-                'trial'               => array(
-                    'days'               => 14,
-                    'is_require_payment' => false,
-                ),
-                'has_affiliation'     => 'selected',
-                'menu'                => array(
-                    'slug'           => 'edit.php?post_type=faq',
-                    'first-path'     => 'edit.php?post_type=faq&page=jltmaf_faq_settings',
-                ),
-                // Set the SDK to work in a sandbox mode (for development & testing).
-                // IMPORTANT: MAKE SURE TO REMOVE SECRET KEY BEFORE DEPLOYMENT.
-                'secret_key'          => 'sk_twGG0lBlNrk*<-AXpf$Fj3U.H-or!',
-            ) );
-        }
-
-        return $jltmaf_accordion;
-    }
-
-    // Init Freemius.
-    jltmaf_accordion();
-    // Signal that SDK was initiated.
-    do_action( 'jltmaf_accordion_loaded' );
+/*
+ * don't call the file directly
+ */
+if ( ! defined( 'ABSPATH' ) ) {
+	wp_die( esc_html__( 'You can\'t access this page', 'wp-awesome-faq' ) );
 }
 
-// Include Files
-include( MAF_DIR . '/inc/faq-cpt.php');
-include( MAF_DIR . '/inc/fa-icons.php');
-include( MAF_DIR . '/inc/faq-assets.php');
-include( MAF_DIR . '/inc/faq-metabox.php');
-include( MAF_DIR . '/inc/faq-dependecies.php');
-include( MAF_DIR . '/inc/helper-functions.php');
-// include( MAF_DIR . '/src/init.php');
-// require_once plugin_dir_path( __FILE__ ) . 'src/init.php';
+$jltwpafaq_plugin_data = get_file_data(
+	__FILE__,
+	array(
+		'Version'     => 'Version',
+		'Plugin Name' => 'Plugin Name',
+		'Author'      => 'Author',
+		'Description' => 'Description',
+		'Plugin URI'  => 'Plugin URI',
+	),
+	false
+);
 
-// Admin Settings
-include( MAF_DIR . '/admin/class.settings-api.php');
-include( MAF_DIR . '/admin/colorful-faq-settings.php');
+// Define Constants.
+if ( ! defined( 'JLTWPAFAQ' ) ) {
+	define( 'JLTWPAFAQ', $jltwpafaq_plugin_data['Plugin Name'] );
+}
 
+if ( ! defined( 'JLTWPAFAQ_VER' ) ) {
+	define( 'JLTWPAFAQ_VER', $jltwpafaq_plugin_data['Version'] );
+}
 
-//Shortcoes
-include( MAF_DIR . '/inc/faq-shortcodes.php');
+if ( ! defined( 'JLTWPAFAQ_AUTHOR' ) ) {
+	define( 'JLTWPAFAQ_AUTHOR', $jltwpafaq_plugin_data['Author'] );
+}
 
+if ( ! defined( 'JLTWPAFAQ_DESC' ) ) {
+	define( 'JLTWPAFAQ_DESC', $jltwpafaq_plugin_data['Author'] );
+}
 
-//Sorting
-include( MAF_DIR . '/lib/sorting.php');
+if ( ! defined( 'JLTWPAFAQ_URI' ) ) {
+	define( 'JLTWPAFAQ_URI', $jltwpafaq_plugin_data['Plugin URI'] );
+}
 
-// Load shortcode generator files
-include( MAF_DIR . '/lib/tinymce.button.php');
+if ( ! defined( 'JLTWPAFAQ_DIR' ) ) {
+	define( 'JLTWPAFAQ_DIR', __DIR__ );
+}
+
+if ( ! defined( 'JLTWPAFAQ_FILE' ) ) {
+	define( 'JLTWPAFAQ_FILE', __FILE__ );
+}
+
+if ( ! defined( 'JLTWPAFAQ_SLUG' ) ) {
+	define( 'JLTWPAFAQ_SLUG', dirname( plugin_basename( __FILE__ ) ) );
+}
+
+if ( ! defined( 'JLTWPAFAQ_BASE' ) ) {
+	define( 'JLTWPAFAQ_BASE', plugin_basename( __FILE__ ) );
+}
+
+if ( ! defined( 'JLTWPAFAQ_PATH' ) ) {
+	define( 'JLTWPAFAQ_PATH', trailingslashit( plugin_dir_path( __FILE__ ) ) );
+}
+
+if ( ! defined( 'JLTWPAFAQ_URL' ) ) {
+	define( 'JLTWPAFAQ_URL', trailingslashit( plugins_url( '/', __FILE__ ) ) );
+}
+
+if ( ! defined( 'JLTWPAFAQ_INC' ) ) {
+	define( 'JLTWPAFAQ_INC', JLTWPAFAQ_PATH . '/Inc/' );
+}
+
+if ( ! defined( 'JLTWPAFAQ_LIBS' ) ) {
+	define( 'JLTWPAFAQ_LIBS', JLTWPAFAQ_PATH . 'Libs' );
+}
+
+if ( ! defined( 'JLTWPAFAQ_ASSETS' ) ) {
+	define( 'JLTWPAFAQ_ASSETS', JLTWPAFAQ_URL . 'assets/' );
+}
+
+if ( ! defined( 'JLTWPAFAQ_IMAGES' ) ) {
+	define( 'JLTWPAFAQ_IMAGES', JLTWPAFAQ_ASSETS . 'images' );
+}
+
+if ( ! class_exists( '\\JLTWPAFAQ\\JLT_Awesome_FAQ' ) ) {
+	// Autoload Files.
+	include_once JLTWPAFAQ_DIR . '/vendor/autoload.php';
+	// Instantiate JLT_Awesome_FAQ Class.
+	include_once JLTWPAFAQ_DIR . '/class-wp-awesome-faq.php';
+}
 
 
